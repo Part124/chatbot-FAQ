@@ -1,0 +1,43 @@
+
+Music Generation with AI
+ Create an AI-powered music generation system capable
+ of composing original music. Utilize deep learning
+ techniques like Recurrent Neural Networks (RNNs) or
+ Generative Adversarial Networks (GANs) to generate
+ music sequences.
+
+
+
+
+import numpy as np
+import pretty_midi
+
+def midi_to_notes(midi_file):
+    midi_data = pretty_midi.PrettyMIDI(midi_file)
+    notes = []
+    for instrument in midi_data.instruments:
+        for note in instrument.notes:
+            notes.append([note.start, note.end, note.pitch, note.velocity])
+    return np.array(notes)
+
+# Example usage
+notes = midi_to_notes('example.mid')
+print(notes)
+
+# Install pretty_midi
+!pip install pretty_midi
+
+import numpy as np
+import pretty_midi
+
+def midi_to_notes(midi_file):
+    midi_data = pretty_midi.PrettyMIDI(midi_file)
+    notes = []
+    for instrument in midi_data.instruments:
+        for note in instrument.notes:
+            notes.append([note.start, note.end, note.pitch, note.velocity])
+    return np.array(notes)
+
+# Example usage
+notes = midi_to_notes('example.mid')
+print(notes)
